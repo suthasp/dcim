@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2026 at 12:35 PM
+-- Generation Time: May 31, 2026 at 03:07 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -1223,7 +1223,7 @@ CREATE TABLE `fac_people` (
 --
 
 INSERT INTO `fac_people` (`PersonID`, `UserID`, `LastName`, `FirstName`, `Phone1`, `Phone2`, `countryCode`, `Email`, `APIKey`, `AdminOwnDevices`, `ReadAccess`, `WriteAccess`, `DeleteAccess`, `ContactAdmin`, `RackRequest`, `RackAdmin`, `BulkOperations`, `SiteAdmin`, `Disabled`, `LastActivity`, `ExpirationDate`) VALUES
-(1, 'admin', 'Administrator', 'Emergency', '', '', '', '', '', 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, '2026-05-31 17:31:47', '0000-00-00');
+(1, 'admin', 'Administrator', 'Emergency', '', '', '', '', '', 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, '2026-05-31 20:05:10', '0000-00-00');
 
 -- --------------------------------------------------------
 
