@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="275" height="66" viewBox="0 0 275 66">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#010b16"/>
-      <stop offset="100%" style="stop-color:#031a30"/>
+      <stop offset="0%" style="stop-color:#020d1a"/>
+      <stop offset="100%" style="stop-color:#020d1a"/>
     </linearGradient>
     <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%"   style="stop-color:#00d4ff;stop-opacity:1"/>
