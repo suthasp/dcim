@@ -17,6 +17,9 @@ drawings/
 /composer.lock
 assets/
 
+#ignore Excel files
+*.xlsx
+
 #ignore symlinks
 scripts/jquery-ui.min.js
 scripts/jquery.min.js
