@@ -146,8 +146,11 @@ $(document).ready( function() {
 // TODO: Potentially sorting of rack inventory might need to be done not
 // according to the data center ID but to the names
 
+// Buffer all output so warnings don't corrupt the Excel binary
+ob_start();
+
 // Error reporting
-error_reporting(E_ALL);
+error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
 ini_set('memory_limit', '840M');
 ini_set('max_execution_time', '0');
 
@@ -1823,8 +1826,8 @@ writeExcelReport($DProps, $objPHPExcel, $thisDate);
 
 $objWriter = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($objPHPExcel);
 if (PHP_SAPI != 'cli') {
-    header('Content-type: application/application/vnd.openxmlformats-officedocument.'
-        . 'spreadsheetml.sheet');
+    ob_end_clean();
+    header('Content-type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
     header("Content-Disposition: attachment; filename=DC_Statistics_" . $thisDate
      . ".xlsx");
     header('Cache-Control: max-age=0');
