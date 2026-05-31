@@ -1,4 +1,4 @@
-<?php
+﻿<?php
   require_once "db.inc.php";
   require_once "facilities.inc.php";
 
@@ -22,7 +22,7 @@
     //  the /tmp directory.  We'll set the filename as a session variable so that we can keep track
     //  of it more simply as we move from stage to stage.
     //
-    $target_dir = '/tmp/';
+    $target_dir = sys_get_temp_dir() . DIRECTORY_SEPARATOR;
     $targetFile = $target_dir . basename($_FILES['inputfile']['name']);
 
     try {

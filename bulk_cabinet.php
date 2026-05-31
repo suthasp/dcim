@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	require_once "db.inc.php";
 	require_once "facilities.inc.php";
 
@@ -21,7 +21,7 @@
     //  of it more simply as we move from stage to stage.
     //
 
-    $target_dir = '/tmp/';
+    $target_dir = sys_get_temp_dir() . DIRECTORY_SEPARATOR;
     $targetFile = $target_dir . basename($_FILES['inputfile']['name']);
 
     try {

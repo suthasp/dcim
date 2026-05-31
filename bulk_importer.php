@@ -1,4 +1,4 @@
-<?php
+﻿<?php
   require_once "db.inc.php";
   require_once "facilities.inc.php";
 
@@ -21,7 +21,7 @@
     //  the /tmp directory.  We'll set the filename as a session variable so that we can keep track
     //  of it more simply as we move from stage to stage.
     //
-    $target_dir = '/tmp/';
+    $target_dir = sys_get_temp_dir() . DIRECTORY_SEPARATOR;
     $targetFile = $target_dir . basename($_FILES['inputfile']['name']);
 
     try {
@@ -217,10 +217,11 @@
         // To check validity of cabinets, we have to know the data center for that specific cabinet.
         $st = $dbh->prepare( "select CabinetID from fac_Cabinet where ucase(Location)=ucase( :Location ) and DataCenterID in (select DataCenterID from fac_DataCenter where ucase(Name)=ucase( :DataCenter ))" );
         foreach( $values["Cabinet"] as $row ) {
+          $cabRow = $row;
           $st->execute( array( ":Location"=>$row["Cabinet"], ":DataCenter"=>$row["DataCenterID"] ));
-          if ( ! $row = $st->fetch()) {
+          if ( ! $st->fetch()) {
             $valid = false;
-            $tmpCon .= "<li>" . __("Cabinet") . ": " . $row["DataCenterID"] . " - " . $row["Cabinet"];
+            $tmpCon .= "<li>" . __("Cabinet") . ": " . $cabRow["DataCenterID"] . " - " . $cabRow["Cabinet"];
           }
         }
 
@@ -287,7 +288,7 @@
           $rowError = false;
 
           // Load up the $row[] array with the values according to the mapping supplied by the user
-          foreach( $fields as $fname ) {
+          foreach( $cFields as $fname ) {
             if ( $_REQUEST[$fname] != 0 ) {
                 $addr = chr( 64 + $_REQUEST[$fname]);
                 $row[$fname] = sanitize($sheet->getCell( $addr . $n )->getValue());
