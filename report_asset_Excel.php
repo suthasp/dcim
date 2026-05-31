@@ -16,7 +16,7 @@
 require_once 'db.inc.php';
 require_once 'facilities.inc.php';
 
-$ReportOutputFolder = "/tmp/";
+$ReportOutputFolder = sys_get_temp_dir() . DIRECTORY_SEPARATOR;
 
 if( !$person->ReadAccess){
     // No soup for you.
@@ -372,7 +372,7 @@ class ReportStats
     /**
      * string $fname filename where the reporting is written to
      */
-    private $fname = '/var/tmp/report_assets_Excel.stats';
+    private $fname = '';
 
     /**
      * @var object|null $_fp file handle to the open reporting file or null
@@ -399,6 +399,7 @@ class ReportStats
 
     private function __construct()
     {
+        $this->fname = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'report_assets_Excel.stats';
         $this->start = microtime(true);
         $this->rid = time();
     }
