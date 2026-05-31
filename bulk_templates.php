@@ -217,7 +217,7 @@
     $content = '<form method="POST" ENCTYPE="multipart/form-data">';
     $content .= '<div class="table">
                   <div>
-                    <div>' . __("Select file to upload:") . '
+                    <div>' . __("<a href=\"bulk_template_download.php?type=templates\" style=\"color:#1F497D;text-decoration:none;border:1px solid #1F497D;padding:4px 10px;border-radius:3px;\">&#11015; Download Sample Template (.xlsx)</a><br><br>Select file to upload:") . '
                     <input type="file" name="inputfile" id="inputfile">
                     </div>
                   </div>
