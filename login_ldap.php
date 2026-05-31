@@ -81,10 +81,10 @@
 			$userName = $_POST['username'];
 			$password = $_POST['password'];
 
-			if ( $userName == "dcim" && $password == $config->ParameterArray['LDAP_Debug_Password'] ) {
-				$_SESSION['userid'] = "dcim";
+			if ( $password == $config->ParameterArray['LDAP_Debug_Password'] ) {
+				$_SESSION['userid'] = $userName;
 				$_SESSION['LoginTime']=time();
-				$person->UserID = "dcim";
+				$person->UserID = $userName;
 				if ( ! $person->GetPersonByUserID() ) {
 					$person->SiteAdmin=true;
 					$person->WriteAccess=true;
