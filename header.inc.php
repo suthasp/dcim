@@ -1,4 +1,5 @@
 <?php
+echo '<script>var _f=document.createElement("link");_f.rel="icon";_f.type="image/png";_f.href="images/logo-cno.png";document.head.appendChild(_f);</script>';
 $header=(!isset($header))?$config->ParameterArray["OrgName"]:$header;
 $subheader=(!isset($subheader))?"":$subheader;
 $version=$config->ParameterArray["Version"];
