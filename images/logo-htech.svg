@@ -1,97 +1,102 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="66" viewBox="0 0 260 66">
+<svg xmlns="http://www.w3.org/2000/svg" width="275" height="66" viewBox="0 0 275 66">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#020d1a;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#041e36;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#010b16"/>
+      <stop offset="100%" style="stop-color:#031a30"/>
     </linearGradient>
-    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0" />
-      <stop offset="50%" style="stop-color:#00d4ff;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:0" />
+    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   style="stop-color:#00d4ff;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0055ff;stop-opacity:0"/>
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <linearGradient id="rackGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   style="stop-color:#00aaff"/>
+      <stop offset="100%" style="stop-color:#0044cc"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
-    <filter id="textGlow">
-      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <filter id="softGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
 
   <!-- Background -->
-  <rect width="260" height="66" fill="url(#bgGrad)"/>
+  <rect width="275" height="66" fill="url(#bgGrad)"/>
 
-  <!-- Circuit grid dots -->
-  <g opacity="0.15" fill="#00d4ff">
-    <circle cx="10" cy="10" r="1"/><circle cx="30" cy="10" r="1"/><circle cx="50" cy="10" r="1"/>
-    <circle cx="10" cy="30" r="1"/><circle cx="30" cy="30" r="1"/><circle cx="50" cy="30" r="1"/>
-    <circle cx="10" cy="50" r="1"/><circle cx="30" cy="50" r="1"/><circle cx="50" cy="50" r="1"/>
-    <circle cx="20" cy="20" r="1"/><circle cx="40" cy="20" r="1"/>
-    <circle cx="20" cy="40" r="1"/><circle cx="40" cy="40" r="1"/>
-    <circle cx="20" cy="60" r="1"/><circle cx="40" cy="60" r="1"/>
+  <!-- Subtle grid -->
+  <g opacity="0.05" stroke="#00d4ff" stroke-width="0.5" fill="none">
+    <line x1="0"   y1="22" x2="275" y2="22"/>
+    <line x1="0"   y1="44" x2="275" y2="44"/>
+    <line x1="55"  y1="0"  x2="55"  y2="66"/>
+    <line x1="110" y1="0"  x2="110" y2="66"/>
+    <line x1="165" y1="0"  x2="165" y2="66"/>
+    <line x1="220" y1="0"  x2="220" y2="66"/>
   </g>
 
-  <!-- Circuit lines -->
-  <g stroke="#00d4ff" stroke-width="0.5" opacity="0.2" fill="none">
-    <line x1="10" y1="10" x2="30" y2="10"/>
-    <line x1="30" y1="10" x2="30" y2="30"/>
-    <line x1="10" y1="30" x2="20" y2="30"/>
-    <line x1="20" y1="30" x2="20" y2="50"/>
-    <line x1="20" y1="50" x2="50" y2="50"/>
-    <line x1="50" y1="10" x2="50" y2="30"/>
-    <line x1="40" y1="20" x2="50" y2="20"/>
-    <line x1="10" y1="50" x2="10" y2="60"/>
-    <line x1="40" y1="40" x2="40" y2="60"/>
+  <!-- Circuit traces left -->
+  <g stroke="#00d4ff" stroke-width="0.8" fill="none" opacity="0.3">
+    <polyline points="4,28 12,28 12,14 20,14"/>
+    <polyline points="4,28 4,42 12,42 12,36 20,36"/>
+    <polyline points="20,14 20,8 28,8"/>
+    <polyline points="20,36 20,46 28,46"/>
+  </g>
+  <g fill="#00d4ff" opacity="0.55" filter="url(#glow)">
+    <circle cx="4"  cy="28" r="1.5"/>
+    <circle cx="12" cy="14" r="1.5"/>
+    <circle cx="12" cy="42" r="1.5"/>
+    <circle cx="20" cy="8"  r="1.5"/>
+    <circle cx="20" cy="46" r="1.5"/>
   </g>
 
-  <!-- Server rack icon -->
-  <g transform="translate(62, 8)" filter="url(#glow)">
-    <!-- Rack frame -->
-    <rect x="0" y="0" width="28" height="50" rx="2" fill="none" stroke="#00d4ff" stroke-width="1.2"/>
-    <!-- Rack units -->
-    <rect x="3" y="4"  width="22" height="6" rx="1" fill="#00d4ff" opacity="0.7"/>
-    <rect x="3" y="13" width="22" height="6" rx="1" fill="#00d4ff" opacity="0.5"/>
-    <rect x="3" y="22" width="22" height="6" rx="1" fill="#00d4ff" opacity="0.4"/>
-    <rect x="3" y="31" width="22" height="6" rx="1" fill="#0066ff" opacity="0.5"/>
-    <rect x="3" y="40" width="22" height="6" rx="1" fill="#0066ff" opacity="0.4"/>
-    <!-- LED indicators -->
-    <circle cx="21" cy="7"  r="1.5" fill="#00ff88" opacity="0.9"/>
-    <circle cx="21" cy="16" r="1.5" fill="#00ff88" opacity="0.7"/>
-    <circle cx="21" cy="25" r="1.5" fill="#ffaa00" opacity="0.8"/>
-    <circle cx="21" cy="34" r="1.5" fill="#00ff88" opacity="0.7"/>
-    <circle cx="21" cy="43" r="1.5" fill="#00ff88" opacity="0.6"/>
+  <!-- Server rack icon (smaller, 40px tall) -->
+  <g transform="translate(38, 5)" filter="url(#glow)">
+    <rect x="0" y="0" width="32" height="42" rx="2" fill="none" stroke="#00d4ff" stroke-width="1.4"/>
+    <!-- Rack ears -->
+    <rect x="-3" y="2"  width="3" height="4" rx="1" fill="#00aaff" opacity="0.4"/>
+    <rect x="-3" y="36" width="3" height="4" rx="1" fill="#00aaff" opacity="0.4"/>
+    <rect x="32" y="2"  width="3" height="4" rx="1" fill="#00aaff" opacity="0.4"/>
+    <rect x="32" y="36" width="3" height="4" rx="1" fill="#00aaff" opacity="0.4"/>
+    <!-- 1U servers -->
+    <rect x="3" y="3"  width="26" height="6" rx="1.2" fill="url(#rackGrad)" opacity="0.85"/>
+    <rect x="3" y="12" width="26" height="6" rx="1.2" fill="url(#rackGrad)" opacity="0.7"/>
+    <rect x="3" y="21" width="26" height="6" rx="1.2" fill="url(#rackGrad)" opacity="0.55"/>
+    <rect x="3" y="30" width="26" height="6" rx="1.2" fill="#003388" opacity="0.6"/>
+    <rect x="3" y="37" width="26" height="3" rx="1"   fill="#001144" opacity="0.5"/>
+    <!-- LEDs -->
+    <circle cx="25" cy="6"  r="1.8" fill="#00ff88" filter="url(#glow)" opacity="0.9"/>
+    <circle cx="25" cy="15" r="1.8" fill="#00ff88" filter="url(#glow)" opacity="0.8"/>
+    <circle cx="25" cy="24" r="1.8" fill="#ffcc00" filter="url(#glow)" opacity="0.85"/>
+    <circle cx="25" cy="33" r="1.8" fill="#00ff88" filter="url(#glow)" opacity="0.8"/>
+    <!-- Drive bays -->
+    <rect x="4" y="5"  width="17" height="2" rx="0.5" fill="#002255" opacity="0.8"/>
+    <rect x="4" y="14" width="17" height="2" rx="0.5" fill="#002255" opacity="0.8"/>
+    <rect x="4" y="23" width="17" height="2" rx="0.5" fill="#002255" opacity="0.8"/>
   </g>
 
-  <!-- Divider line -->
-  <line x1="100" y1="8" x2="100" y2="58" stroke="#00d4ff" stroke-width="0.8" opacity="0.5"/>
+  <!-- Vertical separator -->
+  <line x1="85" y1="4" x2="85" y2="48" stroke="#00d4ff" stroke-width="0.8" opacity="0.45"/>
+  <circle cx="85" cy="4"  r="1.5" fill="#00d4ff" opacity="0.6"/>
+  <circle cx="85" cy="48" r="1.5" fill="#00d4ff" opacity="0.6"/>
 
-  <!-- openDCIM text -->
-  <text x="110" y="30"
-    font-family="'Arial', sans-serif"
-    font-size="22"
-    font-weight="bold"
-    letter-spacing="1"
-    fill="#ffffff"
-    filter="url(#textGlow)">open<tspan fill="#00d4ff">DCIM</tspan></text>
+  <!-- DCIM text (vertically centered in top portion) -->
+  <text x="95" y="36"
+    font-family="'Arial Black','Arial',sans-serif"
+    font-size="30"
+    font-weight="900"
+    letter-spacing="2"
+    fill="#00d4ff"
+    filter="url(#softGlow)">DCIM</text>
 
-  <!-- Subtitle -->
-  <text x="110" y="46"
-    font-family="'Arial', sans-serif"
-    font-size="8"
+  <!-- Horizontal divider above subtitle -->
+  <rect x="4" y="50" width="267" height="0.8" fill="url(#accentLine)" opacity="0.5"/>
+
+  <!-- Subtitle at very bottom, below rack -->
+  <text x="6" y="61"
+    font-family="'Arial','sans-serif'"
+    font-size="7"
     letter-spacing="0.5"
-    fill="#7ecfed"
-    opacity="0.85">data center infrastructure management</text>
-
-  <!-- Bottom accent line -->
-  <rect x="110" y="50" width="140" height="1" fill="url(#lineGrad)" opacity="0.6"/>
-
-  <!-- Top accent line -->
-  <rect x="110" y="14" width="140" height="0.5" fill="url(#lineGrad)" opacity="0.3"/>
+    fill="#5bbfdb"
+    opacity="0.85">DATA CENTER INFRASTRUCTURE MANAGEMENT</text>
 </svg>
