@@ -1,4 +1,4 @@
 AuthType Basic
 AuthName "openDCIM"
-AuthUserFile "c:/xampp/htdocs/open-dcim/.htpasswd"
+AuthUserFile "D:/xampp/htdocs/open-dcim/.htpasswd"
 Require valid-user

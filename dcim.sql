@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2026 at 03:07 PM
+-- Generation Time: Jun 10, 2026 at 04:29 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -79,7 +79,8 @@ CREATE TABLE `fac_cabinet` (
 --
 
 INSERT INTO `fac_cabinet` (`CabinetID`, `DataCenterID`, `Location`, `LocationSortable`, `AssignedTo`, `ZoneID`, `CabRowID`, `CabinetHeight`, `Model`, `Keylock`, `MaxKW`, `MaxWeight`, `InstallationDate`, `MapX1`, `MapX2`, `FrontEdge`, `MapY1`, `MapY2`, `Notes`, `U1Position`) VALUES
-(1, 2, 'CB01', 'CB01', 0, 8, 5, 42, '', '', 0, 0, '2026-05-31', 0, 0, 'Top', 0, 0, '', 'Bottom');
+(1, 2, 'CB01', 'CB01', 1, 8, 5, 42, '', '', 10, 0, '2026-05-31', 0, 0, 'Top', 0, 0, '', 'Bottom'),
+(2, 2, 'CB02', 'CB02', 1, 8, 5, 42, '', '', 10, 0, '2026-05-31', 0, 0, 'Top', 0, 0, '', 'Bottom');
 
 -- --------------------------------------------------------
 
@@ -267,7 +268,7 @@ INSERT INTO `fac_config` (`Parameter`, `Value`, `UnitOfMeasure`, `ValType`, `Def
 ('annualCostPerUYear', '200', 'Dollars', 'float', '200'),
 ('Locale', 'en_US.utf8', 'TextLocale', 'string', 'en_US.utf8'),
 ('timezone', 'America/Chicago', 'string', 'string', 'America/Chicago'),
-('PDFLogoFile', 'images/logo-htech.svg', 'Filename', 'string', 'images/logo.png'),
+('PDFLogoFile', 'images/logo.png', 'Filename', 'string', 'images/logo.png'),
 ('PDFfont', 'Arial', 'Font', 'string', 'Arial'),
 ('SMTPServer', 'smtp.your.domain', 'Server', 'string', 'smtp.your.domain'),
 ('SMTPPort', '25', 'Port', 'int', '25'),
@@ -413,7 +414,7 @@ CREATE TABLE `fac_container` (
 --
 
 INSERT INTO `fac_container` (`ContainerID`, `Name`, `countryCode`, `ParentID`, `DrawingFileName`, `MapX`, `MapY`) VALUES
-(1, 'CNO', 'TH', 0, '', 0, 0);
+(1, 'CNO', 'TH', 0, 'mapthai.jpg', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -698,7 +699,7 @@ CREATE TABLE `fac_datacache` (
 --
 
 INSERT INTO `fac_datacache` (`ItemType`, `Value`) VALUES
-('NavMenu', '<ul class=\"mktree\" id=\"datacenters\">\n	<li class=\"liClosed\" id=\"c1\"><a class=\"Container\" href=\"container_stats.php?container=1\">CNO</a>\n		<ul>\n		<li class=\"liClosed\" id=\"dc1\"><a class=\"DataCenter\" href=\"dc_stats.php?dc=1\">RST#1st</a>\n			<ul>\n			<li class=\"liClosed\" id=\"zone10\"><a class=\"Zone\" href=\"zone_stats.php?zone=10\">Battery Room</a>\n				<ul>\n				</ul>\n			</li>\n			<li class=\"liClosed\" id=\"zone9\"><a class=\"Zone\" href=\"zone_stats.php?zone=9\">Generator Room</a>\n				<ul>\n				</ul>\n			</li>\n			<li id=\"dc-1\"><a href=\"storageroom.php?dc=1\">Storage Room</a></li>\n			</ul>\n		</li>\n		<li class=\"liClosed\" id=\"dc2\"><a class=\"DataCenter\" href=\"dc_stats.php?dc=2\">RST#2nd</a>\n			<ul>\n			<li class=\"liClosed\" id=\"zone6\"><a class=\"Zone\" href=\"zone_stats.php?zone=6\">Zone A</a>\n				<ul>\n				</ul>\n			</li>\n			<li class=\"liClosed\" id=\"zone7\"><a class=\"Zone\" href=\"zone_stats.php?zone=7\">Zone B</a>\n				<ul>\n				</ul>\n			</li>\n			<li class=\"liClosed\" id=\"zone8\"><a class=\"Zone\" href=\"zone_stats.php?zone=8\">Zone C</a>\n				<ul>\n				<li class=\"liClosed\" id=\"cr4\"><a class=\"CabRow\" href=\"rowview.php?row=4\">CA</a>\n					<ul>\n					</ul>\n				</li>\n				<li class=\"liClosed\" id=\"cr5\"><a class=\"CabRow\" href=\"rowview.php?row=5\">CB</a>\n					<ul>\n					<li class=\"liClosed\" id=\"cab1\"><a class=\"Cabinet\" href=\"cabnavigator.php?cabinetid=1\">CB01</a></li>\n					</ul>\n				</li>\n				</ul>\n			</li>\n			<li id=\"dc-2\"><a href=\"storageroom.php?dc=2\">Storage Room</a></li>\n			</ul>\n		</li>\n		<li class=\"liClosed\" id=\"dc3\"><a class=\"DataCenter\" href=\"dc_stats.php?dc=3\">RST#3rd</a>\n			<ul>\n			<li id=\"dc-3\"><a href=\"storageroom.php?dc=3\">Storage Room</a></li>\n			</ul>\n		</li>\n		<li class=\"liClosed\" id=\"dc4\"><a class=\"DataCenter\" href=\"dc_stats.php?dc=4\">RST#4th</a>\n			<ul>\n			<li id=\"dc-4\"><a href=\"storageroom.php?dc=4\">Storage Room</a></li>\n			</ul>\n		</li>\n		</ul>\n	</li>\n<li id=\"dc-1\"><a href=\"storageroom.php\">General Storage Room</a></li>\n</ul>');
+('NavMenu', '<ul class=\"mktree\" id=\"datacenters\">\n	<li class=\"liClosed\" id=\"c1\"><a class=\"Container\" href=\"container_stats.php?container=1\">CNO</a>\n		<ul>\n		<li class=\"liClosed\" id=\"dc1\"><a class=\"DataCenter\" href=\"dc_stats.php?dc=1\">RST#1st</a>\n			<ul>\n			<li class=\"liClosed\" id=\"zone10\"><a class=\"Zone\" href=\"zone_stats.php?zone=10\">Battery Room</a>\n				<ul>\n				</ul>\n			</li>\n			<li class=\"liClosed\" id=\"zone9\"><a class=\"Zone\" href=\"zone_stats.php?zone=9\">Generator Room</a>\n				<ul>\n				</ul>\n			</li>\n			<li id=\"dc-1\"><a href=\"storageroom.php?dc=1\">Storage Room</a></li>\n			</ul>\n		</li>\n		<li class=\"liClosed\" id=\"dc2\"><a class=\"DataCenter\" href=\"dc_stats.php?dc=2\">RST#2nd</a>\n			<ul>\n			<li class=\"liClosed\" id=\"zone6\"><a class=\"Zone\" href=\"zone_stats.php?zone=6\">Zone A</a>\n				<ul>\n				</ul>\n			</li>\n			<li class=\"liClosed\" id=\"zone7\"><a class=\"Zone\" href=\"zone_stats.php?zone=7\">Zone B</a>\n				<ul>\n				</ul>\n			</li>\n			<li class=\"liClosed\" id=\"zone8\"><a class=\"Zone\" href=\"zone_stats.php?zone=8\">Zone C</a>\n				<ul>\n				<li class=\"liClosed\" id=\"cr4\"><a class=\"CabRow\" href=\"rowview.php?row=4\">CA</a>\n					<ul>\n					</ul>\n				</li>\n				<li class=\"liClosed\" id=\"cr5\"><a class=\"CabRow\" href=\"rowview.php?row=5\">CB</a>\n					<ul>\n					<li class=\"liClosed\" id=\"cab1\"><a class=\"Cabinet\" href=\"cabnavigator.php?cabinetid=1\">CB01</a></li>\n					<li class=\"liClosed\" id=\"cab2\"><a class=\"Cabinet\" href=\"cabnavigator.php?cabinetid=2\">CB02</a></li>\n					</ul>\n				</li>\n				</ul>\n			</li>\n			<li id=\"dc-2\"><a href=\"storageroom.php?dc=2\">Storage Room</a></li>\n			</ul>\n		</li>\n		<li class=\"liClosed\" id=\"dc3\"><a class=\"DataCenter\" href=\"dc_stats.php?dc=3\">RST#3rd</a>\n			<ul>\n			<li id=\"dc-3\"><a href=\"storageroom.php?dc=3\">Storage Room</a></li>\n			</ul>\n		</li>\n		<li class=\"liClosed\" id=\"dc4\"><a class=\"DataCenter\" href=\"dc_stats.php?dc=4\">RST#4th</a>\n			<ul>\n			<li id=\"dc-4\"><a href=\"storageroom.php?dc=4\">Storage Room</a></li>\n			</ul>\n		</li>\n		</ul>\n	</li>\n<li id=\"dc-1\"><a href=\"storageroom.php\">General Storage Room</a></li>\n</ul>');
 
 -- --------------------------------------------------------
 
@@ -728,9 +729,9 @@ CREATE TABLE `fac_datacenter` (
 
 INSERT INTO `fac_datacenter` (`DataCenterID`, `Name`, `SquareFootage`, `DeliveryAddress`, `countryCode`, `Administrator`, `MaxkW`, `DrawingFileName`, `EntryLogging`, `ContainerID`, `MapX`, `MapY`, `U1Position`) VALUES
 (1, 'RST#1st', 0, '', 'TH', '', 0, '', 0, 1, 0, 0, 'Default'),
-(2, 'RST#2nd', 0, '', 'TH', '', 0, '', 0, 1, 0, 0, 'Default'),
+(2, 'RST#2nd', 1000, '', 'TH', '', 1500, 'mapthai.jpg', 0, 1, 646, 90, 'Default'),
 (3, 'RST#3rd', 0, '', 'TH', '', 0, '', 0, 1, 0, 0, 'Default'),
-(4, 'RST#4th', 0, '', 'TH', '', 0, '', 0, 1, 0, 0, 'Default');
+(4, 'RST#4th', 1000, '', 'TH', '', 2000, '', 0, 1, 772, 90, 'Default');
 
 -- --------------------------------------------------------
 
@@ -760,6 +761,13 @@ CREATE TABLE `fac_department` (
   `Classification` varchar(80) NOT NULL,
   `DeptColor` varchar(7) NOT NULL DEFAULT '#FFFFFF'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `fac_department`
+--
+
+INSERT INTO `fac_department` (`DeptID`, `Name`, `ExecSponsor`, `SDM`, `Classification`, `DeptColor`) VALUES
+(1, 'CNO', '', '', 'ITS', '#F70D0D');
 
 -- --------------------------------------------------------
 
@@ -825,6 +833,14 @@ CREATE TABLE `fac_device` (
   `Weight` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Dumping data for table `fac_device`
+--
+
+INSERT INTO `fac_device` (`DeviceID`, `Label`, `SerialNo`, `AssetTag`, `PrimaryIP`, `SNMPVersion`, `v3SecurityLevel`, `v3AuthProtocol`, `v3AuthPassphrase`, `v3PrivProtocol`, `v3PrivPassphrase`, `SNMPCommunity`, `SNMPFailureCount`, `Hypervisor`, `APIUsername`, `APIPassword`, `APIPort`, `ProxMoxRealm`, `Owner`, `EscalationTimeID`, `EscalationID`, `PrimaryContact`, `Cabinet`, `Position`, `Height`, `Ports`, `FirstPortNum`, `TemplateID`, `NominalWatts`, `PowerSupplyCount`, `DeviceType`, `ChassisSlots`, `RearChassisSlots`, `ParentDevice`, `MfgDate`, `InstallDate`, `WarrantyCo`, `WarrantyExpire`, `Notes`, `Status`, `HalfDepth`, `BackSide`, `AuditStamp`, `Weight`) VALUES
+(1, 'TEST-SERVER01', '', '1234', '', '1', 'noAuthNoPriv', 'MD5', '', 'DES', '', '', 0, 'None', '', '', 0, '', 1, 0, 0, 0, 1, 3, 1, 0, 0, 1, 400, 0, 'Server', 0, 0, 0, '2025-12-31', '2026-05-31', '', '2028-12-31', '', 'Reserved', 0, 0, '1969-12-31 00:00:00', 0),
+(2, 'SERVER SEQ', '', '', '', '2c', 'noAuthNoPriv', 'MD5', '', 'DES', '', '', 0, 'None', '', '', 0, '', 1, 0, 0, 0, 2, 10, 1, 0, 0, 1, 400, 0, 'Server', 0, 0, 0, '2026-02-01', '2026-05-31', 'Huawei', '2027-12-31', '', 'Reserved', 0, 0, '1969-12-31 00:00:00', 100);
+
 -- --------------------------------------------------------
 
 --
@@ -836,6 +852,14 @@ CREATE TABLE `fac_devicecache` (
   `Front` mediumtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `Rear` mediumtext CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `fac_devicecache`
+--
+
+INSERT INTO `fac_devicecache` (`DeviceID`, `Front`, `Rear`) VALUES
+(1, '\n	&lt;div class=&quot;picture&quot; style=&quot;width: 220px; height: 21px;&quot;&gt;\n		&lt;a href=&quot;devices.php?DeviceID=1&quot;&gt;\n			&lt;img data-deviceid=1 src=&quot;assets/pictures/Proliant_DL_360_G7.jpg&quot; alt=&quot;TEST-SERVER01&quot;&gt;\n		&lt;/a&gt;\n\n		&lt;div class=&quot;label&quot;&gt;&lt;div&gt;TEST-SERVER01&lt;/div&gt;&lt;/div&gt;\n	&lt;/div&gt;\n', '\n	&lt;div class=&quot;picture&quot; style=&quot;width: 220px; height: 21px;&quot;&gt;\n		&lt;a href=&quot;devices.php?DeviceID=1&quot;&gt;\n			&lt;img data-deviceid=1 src=&quot;assets/pictures/Proliant_DL_360_G7_rear.jpg&quot; alt=&quot;TEST-SERVER01&quot;&gt;\n		&lt;/a&gt;\n\n		&lt;div class=&quot;label&quot;&gt;&lt;div&gt;TEST-SERVER01(Rear)&lt;/div&gt;&lt;/div&gt;\n	&lt;/div&gt;\n'),
+(2, '\n	&lt;div class=&quot;picture&quot; style=&quot;width: 220px; height: 21px;&quot;&gt;\n		&lt;a href=&quot;devices.php?DeviceID=2&quot;&gt;\n			&lt;img data-deviceid=2 src=&quot;assets/pictures/Proliant_DL_360_G7.jpg&quot; alt=&quot;SERVER SEQ&quot;&gt;\n		&lt;/a&gt;\n\n		&lt;div class=&quot;label&quot;&gt;&lt;div&gt;SERVER SEQ&lt;/div&gt;&lt;/div&gt;\n	&lt;/div&gt;\n', '\n	&lt;div class=&quot;picture&quot; style=&quot;width: 220px; height: 21px;&quot;&gt;\n		&lt;a href=&quot;devices.php?DeviceID=2&quot;&gt;\n			&lt;img data-deviceid=2 src=&quot;assets/pictures/Proliant_DL_360_G7_rear.jpg&quot; alt=&quot;SERVER SEQ&quot;&gt;\n		&lt;/a&gt;\n\n		&lt;div class=&quot;label&quot;&gt;&lt;div&gt;SERVER SEQ(Rear)&lt;/div&gt;&lt;/div&gt;\n	&lt;/div&gt;\n');
 
 -- --------------------------------------------------------
 
@@ -926,6 +950,13 @@ CREATE TABLE `fac_devicetemplate` (
   `ShareToRepo` tinyint(1) NOT NULL DEFAULT 0,
   `KeepLocal` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `fac_devicetemplate`
+--
+
+INSERT INTO `fac_devicetemplate` (`TemplateID`, `ManufacturerID`, `Model`, `Height`, `Weight`, `Wattage`, `DeviceType`, `PSCount`, `NumPorts`, `Notes`, `FrontPictureFile`, `RearPictureFile`, `ChassisSlots`, `RearChassisSlots`, `SNMPVersion`, `GlobalID`, `ShareToRepo`, `KeepLocal`) VALUES
+(1, 1, 'PROLIANT DL 360 G7', 1, 0, 400, 'Server', 0, 0, '', 'Proliant_DL_360_G7.jpg', 'Proliant_DL_360_G7_rear.jpg', 0, 0, '1', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1124,7 +1155,157 @@ INSERT INTO `fac_genericlog` (`UserID`, `Class`, `ObjectID`, `ChildID`, `Action`
 ('admin', 'Cabinet', '1', NULL, '1', 'CabinetHeight', '', '42', '2026-05-31 09:00:53'),
 ('admin', 'Cabinet', '1', NULL, '1', 'InstallationDate', '', '2026-05-31', '2026-05-31 09:00:53'),
 ('admin', 'Cabinet', '1', NULL, '1', 'FrontEdge', '', 'Top', '2026-05-31 09:00:53'),
-('admin', 'Cabinet', '1', NULL, '1', 'U1Position', '', 'Bottom', '2026-05-31 09:00:53');
+('admin', 'Cabinet', '1', NULL, '1', 'U1Position', '', 'Bottom', '2026-05-31 09:00:53'),
+('admin', 'Manufacturer', '1', NULL, '1', 'ManufacturerID', '', '1', '2026-05-31 13:47:19'),
+('admin', 'Manufacturer', '1', NULL, '1', 'Name', '', 'HP', '2026-05-31 13:47:19'),
+('admin', 'DeviceTemplate', '1', NULL, '1', 'TemplateID', '', '1', '2026-05-31 13:49:52'),
+('admin', 'DeviceTemplate', '1', NULL, '1', 'ManufacturerID', '', '1', '2026-05-31 13:49:52'),
+('admin', 'DeviceTemplate', '1', NULL, '1', 'Model', '', 'PROLIANT DL 360 G7', '2026-05-31 13:49:52'),
+('admin', 'DeviceTemplate', '1', NULL, '1', 'Height', '', '1', '2026-05-31 13:49:52'),
+('admin', 'DeviceTemplate', '1', NULL, '1', 'DeviceType', '', 'Server', '2026-05-31 13:49:52'),
+('admin', 'DeviceTemplate', '1', NULL, '1', 'SNMPVersion', '', '1', '2026-05-31 13:49:52'),
+('admin', 'CDUTemplate', '1', NULL, '3', 'ManufacturerID', '', '1', '2026-05-31 13:49:52'),
+('admin', 'CDUTemplate', '1', NULL, '3', 'Model', '', 'PROLIANT DL 360 G7', '2026-05-31 13:49:52'),
+('admin', 'CDUTemplate', '1', NULL, '3', 'Multiplier', '1', '0.01', '2026-05-31 13:49:52'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'ManufacturerID', '', '1', '2026-05-31 13:49:52'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'Model', '', 'PROLIANT DL 360 G7', '2026-05-31 13:49:52'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'TempMultiplier', '1', '0.01', '2026-05-31 13:49:52'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'HumidityMultiplier', '1', '0.01', '2026-05-31 13:49:52'),
+('admin', 'Department', '1', NULL, '1', 'DeptID', '', '1', '2026-05-31 13:51:03'),
+('admin', 'Department', '1', NULL, '1', 'Name', '', 'CNO', '2026-05-31 13:51:03'),
+('admin', 'Department', '1', NULL, '1', 'Classification', '', 'ITS', '2026-05-31 13:51:03'),
+('admin', 'Department', '1', NULL, '1', 'DeptColor', '', '#F70D0D', '2026-05-31 13:51:03'),
+('admin', 'Device', '1', NULL, '1', 'DeviceID', '', '1', '2026-05-31 13:52:23'),
+('admin', 'Device', '1', NULL, '1', 'Label', '', 'TEST-SERVER01', '2026-05-31 13:52:23'),
+('admin', 'Device', '1', NULL, '1', 'AssetTag', '', '1234', '2026-05-31 13:52:23'),
+('admin', 'Device', '1', NULL, '1', 'SNMPVersion', '', '2c', '2026-05-31 13:52:23'),
+('admin', 'Device', '1', NULL, '1', 'v3SecurityLevel', '', 'noAuthNoPriv', '2026-05-31 13:52:23'),
+('admin', 'Device', '1', NULL, '1', 'v3AuthProtocol', '', 'MD5', '2026-05-31 13:52:23'),
+('admin', 'Device', '1', NULL, '1', 'v3PrivProtocol', '', 'DES', '2026-05-31 13:52:23'),
+('admin', 'Device', '1', NULL, '1', 'Hypervisor', '', 'None', '2026-05-31 13:52:23'),
+('admin', 'Device', '1', NULL, '1', 'Owner', '', '1', '2026-05-31 13:52:23'),
+('admin', 'Device', '1', NULL, '1', 'Cabinet', '', '1', '2026-05-31 13:52:23'),
+('admin', 'Device', '1', NULL, '1', 'Position', '', '1', '2026-05-31 13:52:23'),
+('admin', 'Device', '1', NULL, '1', 'Height', '', '1', '2026-05-31 13:52:23'),
+('admin', 'Device', '1', NULL, '1', 'TemplateID', '', '1', '2026-05-31 13:52:23'),
+('admin', 'Device', '1', NULL, '1', 'DeviceType', '', 'Server', '2026-05-31 13:52:23'),
+('admin', 'Device', '1', NULL, '1', 'InstallDate', '', '2026-05-31', '2026-05-31 13:52:23'),
+('admin', 'Device', '1', NULL, '1', 'Status', '', 'Reserved', '2026-05-31 13:52:23'),
+('admin', 'Device', '1', NULL, '1', 'DataCenterID', '', '2', '2026-05-31 13:52:23'),
+('admin', 'Device', '1', NULL, '3', 'Position', '1', '4', '2026-05-31 13:53:31'),
+('admin', 'Device', '1', NULL, '3', 'Position', '4', '1', '2026-05-31 13:53:41'),
+('admin', 'Device', '1', NULL, '3', 'Position', '1', '2', '2026-05-31 13:53:45'),
+('admin', 'DeviceTemplate', '1', NULL, '3', 'FrontPictureFile', '', 'Proliant_DL_360_G7.jpg', '2026-05-31 14:33:47'),
+('admin', 'DeviceTemplate', '1', NULL, '3', 'ShareToRepo', '', '', '2026-05-31 14:33:47'),
+('admin', 'DeviceTemplate', '1', NULL, '3', 'KeepLocal', '', '', '2026-05-31 14:33:47'),
+('admin', 'CDUTemplate', '1', NULL, '3', 'ManufacturerID', '', '1', '2026-05-31 14:33:47'),
+('admin', 'CDUTemplate', '1', NULL, '3', 'Model', '', 'PROLIANT DL 360 G7', '2026-05-31 14:33:47'),
+('admin', 'CDUTemplate', '1', NULL, '3', 'Multiplier', '1', '0.01', '2026-05-31 14:33:47'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'ManufacturerID', '', '1', '2026-05-31 14:33:47'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'Model', '', 'PROLIANT DL 360 G7', '2026-05-31 14:33:47'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'TempMultiplier', '1', '0.01', '2026-05-31 14:33:47'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'HumidityMultiplier', '1', '0.01', '2026-05-31 14:33:47'),
+('admin', 'DeviceTemplate', '1', NULL, '3', 'ShareToRepo', '', '', '2026-05-31 14:34:49'),
+('admin', 'DeviceTemplate', '1', NULL, '3', 'KeepLocal', '', '', '2026-05-31 14:34:49'),
+('admin', 'CDUTemplate', '1', NULL, '3', 'ManufacturerID', '', '1', '2026-05-31 14:34:49'),
+('admin', 'CDUTemplate', '1', NULL, '3', 'Model', '', 'PROLIANT DL 360 G7', '2026-05-31 14:34:49'),
+('admin', 'CDUTemplate', '1', NULL, '3', 'Multiplier', '1', '0.01', '2026-05-31 14:34:49'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'ManufacturerID', '', '1', '2026-05-31 14:34:49'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'Model', '', 'PROLIANT DL 360 G7', '2026-05-31 14:34:49'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'TempMultiplier', '1', '0.01', '2026-05-31 14:34:49'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'HumidityMultiplier', '1', '0.01', '2026-05-31 14:34:49'),
+('admin', 'DeviceTemplate', '1', NULL, '3', 'RearPictureFile', '', 'Proliant_DL_360_G7_rear.jpg', '2026-05-31 14:38:58'),
+('admin', 'DeviceTemplate', '1', NULL, '3', 'ShareToRepo', '', '', '2026-05-31 14:38:58'),
+('admin', 'DeviceTemplate', '1', NULL, '3', 'KeepLocal', '', '', '2026-05-31 14:38:58'),
+('admin', 'CDUTemplate', '1', NULL, '3', 'ManufacturerID', '', '1', '2026-05-31 14:38:58'),
+('admin', 'CDUTemplate', '1', NULL, '3', 'Model', '', 'PROLIANT DL 360 G7', '2026-05-31 14:38:58'),
+('admin', 'CDUTemplate', '1', NULL, '3', 'Multiplier', '1', '0.01', '2026-05-31 14:38:58'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'ManufacturerID', '', '1', '2026-05-31 14:38:58'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'Model', '', 'PROLIANT DL 360 G7', '2026-05-31 14:38:58'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'TempMultiplier', '1', '0.01', '2026-05-31 14:38:58'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'HumidityMultiplier', '1', '0.01', '2026-05-31 14:38:58'),
+('admin', 'Device', '1', NULL, '3', 'Position', '2', '3', '2026-05-31 14:39:31'),
+('admin', 'Cabinet', '1', NULL, '3', 'AssignedTo', '', '1', '2026-05-31 14:44:27'),
+('admin', 'Device', '1', NULL, '3', 'NominalWatts', '', '400', '2026-05-31 14:50:27'),
+('admin', 'Device', '1', NULL, '3', 'MfgDate', '1969-12-31', '2025-12-31', '2026-05-31 14:50:27'),
+('admin', 'Device', '1', NULL, '3', 'WarrantyExpire', '1969-12-31', '2028-12-31', '2026-05-31 14:50:27'),
+('admin', 'Device', '1', NULL, '3', 'Reservation', '', '', '2026-05-31 14:50:27'),
+('admin', 'Container', '1', NULL, '3', 'DrawingFileName', '', 'mapthai.jpg', '2026-05-31 15:03:20'),
+('admin', 'DeviceTemplate', '1', NULL, '3', 'Wattage', '', '400', '2026-05-31 15:21:46'),
+('admin', 'DeviceTemplate', '1', NULL, '3', 'ShareToRepo', '', '', '2026-05-31 15:21:46'),
+('admin', 'DeviceTemplate', '1', NULL, '3', 'KeepLocal', '', '', '2026-05-31 15:21:46'),
+('admin', 'CDUTemplate', '1', NULL, '3', 'ManufacturerID', '', '1', '2026-05-31 15:21:46'),
+('admin', 'CDUTemplate', '1', NULL, '3', 'Model', '', 'PROLIANT DL 360 G7', '2026-05-31 15:21:46'),
+('admin', 'CDUTemplate', '1', NULL, '3', 'Multiplier', '1', '0.01', '2026-05-31 15:21:46'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'ManufacturerID', '', '1', '2026-05-31 15:21:46'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'Model', '', 'PROLIANT DL 360 G7', '2026-05-31 15:21:46'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'TempMultiplier', '1', '0.01', '2026-05-31 15:21:46'),
+('admin', 'SensorTemplate', '1', NULL, '3', 'HumidityMultiplier', '1', '0.01', '2026-05-31 15:21:46'),
+('admin', 'Cabinet', '1', NULL, '3', 'MaxKW', '', '10', '2026-05-31 15:26:28'),
+('admin', 'Cabinet', '2', NULL, '1', 'CabinetID', '', '2', '2026-05-31 16:59:12'),
+('admin', 'Cabinet', '2', NULL, '1', 'DataCenterID', '', '2', '2026-05-31 16:59:12'),
+('admin', 'Cabinet', '2', NULL, '1', 'Location', '', 'CB02', '2026-05-31 16:59:12'),
+('admin', 'Cabinet', '2', NULL, '1', 'LocationSortable', '', 'CB02', '2026-05-31 16:59:12'),
+('admin', 'Cabinet', '2', NULL, '1', 'ZoneID', '', '8', '2026-05-31 16:59:12'),
+('admin', 'Cabinet', '2', NULL, '1', 'CabRowID', '', '5', '2026-05-31 16:59:12'),
+('admin', 'Cabinet', '2', NULL, '1', 'MaxKW', '', '10', '2026-05-31 16:59:12'),
+('admin', 'Cabinet', '2', NULL, '1', 'InstallationDate', '', '2026-05-31', '2026-05-31 16:59:12'),
+('admin', 'Cabinet', '2', NULL, '1', 'FrontEdge', '', 'Top', '2026-05-31 16:59:12'),
+('admin', 'Cabinet', '2', NULL, '1', 'U1Position', '', 'Bottom', '2026-05-31 16:59:12'),
+('admin', 'Cabinet', '2', NULL, '3', 'CabinetHeight', '', '42', '2026-05-31 17:00:08'),
+('admin', 'Device', '2', NULL, '1', 'DeviceID', '', '2', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'Label', '', 'SERVER SEQ', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'SNMPVersion', '', '2c', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'v3SecurityLevel', '', 'noAuthNoPriv', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'v3AuthProtocol', '', 'MD5', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'v3PrivProtocol', '', 'DES', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'Hypervisor', '', 'None', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'Cabinet', '', '2', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'Position', '', '10', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'Height', '', '1', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'TemplateID', '', '1', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'NominalWatts', '', '400', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'DeviceType', '', 'Server', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'MfgDate', '', '2026-02-01', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'InstallDate', '', '2026-05-31', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'WarrantyCo', '', 'Huawei', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'WarrantyExpire', '', '2027-12-31', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'Status', '', 'Reserved', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'Weight', '', '100', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'ManufacturerID', '', '1', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'Model', '', 'PROLIANT DL 360 G7', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'Wattage', '', '400', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'FrontPictureFile', '', 'Proliant_DL_360_G7.jpg', '2026-05-31 17:03:01'),
+('admin', 'Device', '2', NULL, '1', 'RearPictureFile', '', 'Proliant_DL_360_G7_rear.jpg', '2026-05-31 17:03:01'),
+('admin', 'Cabinet', '2', NULL, '3', 'AssignedTo', '', '1', '2026-05-31 17:03:37'),
+('admin', 'Device', '2', NULL, '3', 'Owner', '', '1', '2026-05-31 17:04:08'),
+('admin', 'Device', '2', NULL, '3', 'Reservation', '', '', '2026-05-31 17:04:08'),
+('admin', 'DataCenter', '2', NULL, '3', 'SquareFootage', '', '1000', '2026-06-01 05:47:47'),
+('admin', 'DataCenter', '2', NULL, '3', 'MaxkW', '', '1500', '2026-06-01 05:47:47'),
+('admin', 'DataCenter', '2', NULL, '3', 'DrawingFileName', '', 'mapthai.jpg', '2026-06-01 05:47:47'),
+('admin', 'DataCenter', '2', NULL, '3', 'MapX', '', '646', '2026-06-01 05:47:47'),
+('admin', 'DataCenter', '2', NULL, '3', 'MapY', '', '90', '2026-06-01 05:47:47'),
+('admin', 'People', '2', NULL, '1', 'PersonID', '', '2', '2026-06-01 05:51:44'),
+('admin', 'People', '2', NULL, '1', 'UserID', '', 'suthas', '2026-06-01 05:51:44'),
+('admin', 'People', '2', NULL, '1', 'LastName', '', 'Permpoolpanich', '2026-06-01 05:51:44'),
+('admin', 'People', '2', NULL, '1', 'FirstName', '', 'Suthas', '2026-06-01 05:51:44'),
+('admin', 'People', '2', NULL, '1', 'Phone1', '', '0865159836', '2026-06-01 05:51:44'),
+('admin', 'People', '2', NULL, '1', 'Phone2', '', '0865159836', '2026-06-01 05:51:44'),
+('admin', 'People', '2', NULL, '1', 'countryCode', '', 'TH', '2026-06-01 05:51:44'),
+('admin', 'People', '2', NULL, '1', 'Email', '', 'suthasp@gmail.com', '2026-06-01 05:51:44'),
+('admin', 'People', '2', NULL, '1', 'ReadAccess', '', '1', '2026-06-01 05:51:44'),
+('admin', 'People', '2', NULL, '1', 'WriteAccess', '', '1', '2026-06-01 05:51:44'),
+('admin', 'People', '2', NULL, '1', 'DeleteAccess', '', '1', '2026-06-01 05:51:44'),
+('admin', 'People', '2', NULL, '1', 'ContactAdmin', '', '1', '2026-06-01 05:51:44'),
+('admin', 'People', '2', NULL, '1', 'RackRequest', '', '1', '2026-06-01 05:51:44'),
+('admin', 'People', '2', NULL, '1', 'RackAdmin', '', '1', '2026-06-01 05:51:44'),
+('admin', 'People', '2', NULL, '1', 'ExpirationDate', '', '2030/12/31', '2026-06-01 05:51:44'),
+('admin', 'People', '2', NULL, '3', '', '', '', '2026-06-01 05:52:16'),
+('admin', 'People', '2', NULL, '3', '', '', '', '2026-06-01 05:55:16'),
+('admin', 'DataCenter', '4', NULL, '3', 'SquareFootage', '', '1000', '2026-06-01 06:13:50'),
+('admin', 'DataCenter', '4', NULL, '3', 'MaxkW', '', '2000', '2026-06-01 06:13:50'),
+('admin', 'DataCenter', '4', NULL, '3', 'MapX', '', '772', '2026-06-01 06:13:50'),
+('admin', 'DataCenter', '4', NULL, '3', 'MapY', '', '90', '2026-06-01 06:13:50');
 
 -- --------------------------------------------------------
 
@@ -1150,6 +1331,13 @@ CREATE TABLE `fac_manufacturer` (
   `GlobalID` int(11) NOT NULL DEFAULT 0,
   `SubscribeToUpdates` int(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `fac_manufacturer`
+--
+
+INSERT INTO `fac_manufacturer` (`ManufacturerID`, `Name`, `GlobalID`, `SubscribeToUpdates`) VALUES
+(1, 'HP', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1223,7 +1411,8 @@ CREATE TABLE `fac_people` (
 --
 
 INSERT INTO `fac_people` (`PersonID`, `UserID`, `LastName`, `FirstName`, `Phone1`, `Phone2`, `countryCode`, `Email`, `APIKey`, `AdminOwnDevices`, `ReadAccess`, `WriteAccess`, `DeleteAccess`, `ContactAdmin`, `RackRequest`, `RackAdmin`, `BulkOperations`, `SiteAdmin`, `Disabled`, `LastActivity`, `ExpirationDate`) VALUES
-(1, 'admin', 'Administrator', 'Emergency', '', '', '', '', '', 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, '2026-05-31 20:05:10', '0000-00-00');
+(1, 'admin', 'Administrator', 'Emergency', '', '', '', '', '', 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, '2026-06-10 21:28:47', '0000-00-00'),
+(2, 'suthas', 'Permpoolpanich', 'Suthas', '0865159836', '0865159836', 'TH', 'suthasp@gmail.com', '', 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, '2026-06-01 12:54:11', '2030-12-31');
 
 -- --------------------------------------------------------
 
@@ -1873,7 +2062,7 @@ ALTER TABLE `fac_zone`
 -- AUTO_INCREMENT for table `fac_cabinet`
 --
 ALTER TABLE `fac_cabinet`
-  MODIFY `CabinetID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `CabinetID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `fac_cabrow`
@@ -1909,13 +2098,13 @@ ALTER TABLE `fac_datacenter`
 -- AUTO_INCREMENT for table `fac_department`
 --
 ALTER TABLE `fac_department`
-  MODIFY `DeptID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `DeptID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `fac_device`
 --
 ALTER TABLE `fac_device`
-  MODIFY `DeviceID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `DeviceID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `fac_devicecustomattribute`
@@ -1933,7 +2122,7 @@ ALTER TABLE `fac_devicestatus`
 -- AUTO_INCREMENT for table `fac_devicetemplate`
 --
 ALTER TABLE `fac_devicetemplate`
-  MODIFY `TemplateID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `TemplateID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `fac_disposition`
@@ -1957,7 +2146,7 @@ ALTER TABLE `fac_escalationtimes`
 -- AUTO_INCREMENT for table `fac_manufacturer`
 --
 ALTER TABLE `fac_manufacturer`
-  MODIFY `ManufacturerID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ManufacturerID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `fac_mediatypes`
@@ -1975,7 +2164,7 @@ ALTER TABLE `fac_panelschedule`
 -- AUTO_INCREMENT for table `fac_people`
 --
 ALTER TABLE `fac_people`
-  MODIFY `PersonID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `PersonID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `fac_powerdistribution`
